@@ -1,7 +1,7 @@
 // Configuración del negocio: escribe el WhatsApp internacional sin +, espacios ni símbolos.
 // Ejemplo de formato (solo referencia): 573001234567. Reemplázalo por el número real.
 const BUSINESS_WHATSAPP = '573008067616';
-const BUSINESS_NAME = 'Maison La Perfumería';
+const BUSINESS_NAME = 'MAISON LA PERFUMERÍA';
 const products = window.MAISON_PRODUCTS || [];
 const CATEGORIES = ['Todos',...new Set(products.flatMap(p=>[p.category,...p.tags]).filter(c=>['Mujer','Hombre','Unisex','Árabes'].includes(c)))];
 const CURRENCY = new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0});
