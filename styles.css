@@ -236,10 +236,8 @@ button { color: inherit; }
   .catalog-section { padding-top: 62px; }
   .catalog-heading { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 0; }
   .catalog-heading .result-count { grid-column: 1; grid-row: 3; justify-self: start; display: block; margin-top: 9px; }
-  .catalog-categories { display: grid; grid-column: 1; grid-row: 2; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 7px; margin-top: 13px; }
-  .catalog-categories .filter-chip { grid-column: span 2; padding: 9px 4px; font-size: 9px; white-space: nowrap; }
-  .catalog-categories .filter-chip:nth-child(4) { grid-column: 2 / span 2; }
-  .catalog-categories .filter-chip:nth-child(5) { grid-column: 4 / span 2; }
+  .catalog-categories { display: grid; grid-column: 1; grid-row: 2; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; margin-top: 13px; }
+  .catalog-categories .filter-chip { min-width: 0; padding: 8px 2px; font-size: 8px; white-space: nowrap; }
   .catalog-tools { gap: 8px; }
   .search-box { min-width: 0; height: 44px; }
   .select-wrap select { width: 100%; max-width: 100%; height: 44px; padding: 0 24px 0 10px; font-size: 9px; }
