@@ -7,7 +7,7 @@
   <meta name="description" content="Descubre tu próxima fragancia favorita en Maison La Perfumería. Explora el catálogo y haz tu pedido por WhatsApp.">
   <title>MAISON LA | Perfumería</title>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
   <script src="products.js?v=2" defer></script>
   <script src="app.js?v=5" defer></script>
 </head>
@@ -17,14 +17,13 @@
     <div class="header-actions"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Activar modo oscuro" title="Activar modo oscuro"><span aria-hidden="true">☾</span></button>
     <button class="cart-trigger" id="open-cart" aria-label="Abrir carrito"><span>Mi bolsa</span><span class="bag-icon">♧</span><b id="cart-count">0</b></button></div>
   </header>
-  <nav class="header-categories" id="filters" aria-label="Filtrar por categoría"></nav>
   <main id="inicio">
     <section class="hero">
       <div class="hero-copy"><span class="eyebrow">MAISON LA · PERFUMERÍA</span><h1>Tu aroma.<br><em>Tu esencia.</em></h1><p>Encuentra tu próxima fragancia.</p><a class="button button-dark" href="#catalogo">Ver catálogo <span>↗</span></a></div>
       <div class="hero-art"><img class="hero-logo" src="assets/productos/image.png" alt="Logo de Maison La Perfumería"></div>
     </section>
     <div id="featured-grid" hidden></div>
-    <section class="section catalog-section" id="catalogo"><div class="section-heading catalog-heading"><div><span class="eyebrow">FRAGANCIAS</span><h2>Catálogo</h2></div><span id="result-count" class="result-count"></span></div>
+    <section class="section catalog-section" id="catalogo"><div class="section-heading catalog-heading"><div><span class="eyebrow">FRAGANCIAS</span><h2>Catálogo</h2></div><nav class="catalog-categories" id="filters" aria-label="Filtrar por categoría"></nav><span id="result-count" class="result-count"></span></div>
       <div class="catalog-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Busca por nombre o marca…" aria-label="Buscar perfumes"></label></div>
       <div id="catalog-grid" class="product-grid"></div><p id="empty-state" class="empty-state" hidden>No encontramos fragancias con esa búsqueda. Prueba otro término o categoría.</p>
     </section>
