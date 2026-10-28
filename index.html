@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6f1">
+  <meta name="description" content="Descubre tu próxima fragancia favorita en Maison La Perfumería. Explora el catálogo y haz tu pedido por WhatsApp.">
+  <title>MAISON LA | Perfumería</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css?v=6">
+  <script src="products.js?v=2" defer></script>
+  <script src="app.js?v=5" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Maison La Perfumería, inicio"><span class="brand-wordmark">MAISON LA<small>PERFUMERÍA</small></span></a>
+    <div class="header-categories" id="filters" aria-label="Filtrar por categoría"></div>
+    <div class="header-actions"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Activar modo oscuro" title="Activar modo oscuro"><span aria-hidden="true">☾</span></button>
+    <button class="cart-trigger" id="open-cart" aria-label="Abrir carrito"><span>Mi bolsa</span><span class="bag-icon">♧</span><b id="cart-count">0</b></button></div>
+  </header>
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow">MAISON LA · PERFUMERÍA</span><h1>Tu aroma.<br><em>Tu esencia.</em></h1><p>Encuentra tu próxima fragancia.</p><a class="button button-dark" href="#catalogo">Ver catálogo <span>↗</span></a></div>
+      <div class="hero-art"><img class="hero-logo" src="assets/productos/image.png" alt="Logo de Maison La Perfumería"></div>
+    </section>
+    <div id="featured-grid" hidden></div>
+    <section class="section catalog-section" id="catalogo"><div class="section-heading catalog-heading"><div><span class="eyebrow">FRAGANCIAS</span><h2>Catálogo</h2></div><span id="result-count" class="result-count"></span></div>
+      <div class="catalog-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Busca por nombre o marca…" aria-label="Buscar perfumes"></label></div>
+      <div id="catalog-grid" class="product-grid"></div><p id="empty-state" class="empty-state" hidden>No encontramos fragancias con esa búsqueda. Prueba otro término o categoría.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#inicio" aria-label="Maison La Perfumería, inicio"><span class="brand-wordmark">MAISON LA<small>PERFUMERÍA</small></span></a><small class="copyright">© 2026 Maison La · Desarrollado por Liana Gamarra</small></footer>
+  <a class="whatsapp-float" id="floating-whatsapp" href="#" aria-label="Contactar por WhatsApp" title="Contactar por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.3l1.2-4.7a8.5 8.5 0 1 1 16.3-3.9Z"/><path d="M8.2 7.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4 0 .6l-.6.8c-.2.2-.2.4-.1.6.5 1 1.3 1.8 2.3 2.3.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5 0 .3-.2 1.2-.8 1.6-.5.4-1.1.6-1.8.4-1-.2-2.3-.8-3.7-2-1.2-1.1-2-2.4-2.3-3.4-.3-.9 0-1.8.4-2.3Z"/></svg></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-message" id="toast-message"></span><div class="toast-actions" id="toast-actions"><button class="toast-continue" id="toast-continue" type="button">Seguir comprando</button><button class="toast-cart" id="toast-cart" type="button">Ir al carrito <span aria-hidden="true">→</span></button></div></div>
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito de compras" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow">TU SELECCIÓN</span><h2>Mi bolsa <span id="drawer-count">(0)</span></h2></div><button class="icon-button" data-close aria-label="Cerrar carrito">×</button></div><div id="cart-items" class="cart-items"></div><div id="cart-empty" class="cart-empty"><span class="empty-bag">◇</span><h3>Tu bolsa está esperando</h3><p>Explora el catálogo y agrega tus próximas fragancias favoritas.</p><button class="button button-outline" data-close>Seguir explorando</button></div><div class="cart-bottom" id="cart-bottom"><div class="cart-total"><span>Subtotal</span><strong id="cart-total"></strong></div><p>El costo de envío se confirma al coordinar tu pedido.</p><button class="button button-dark checkout-button" id="checkout">Finalizar pedido por WhatsApp <span>↗</span></button><button class="clear-cart" id="clear-cart">Vaciar bolsa</button></div></aside>
+  <dialog id="detail-dialog" class="detail-dialog"><button class="icon-button detail-close" data-dialog-close aria-label="Cerrar detalle">×</button><div id="detail-content"></div></dialog>
+  <dialog id="order-dialog" class="order-dialog"><div class="order-head"><div><span class="eyebrow">CASI LISTO</span><h2>Coordina tu pedido</h2><p>Completa tus datos y revisa el resumen antes de abrir WhatsApp.</p></div><button class="icon-button" data-dialog-close aria-label="Cerrar formulario">×</button></div><form id="order-form" novalidate><div class="form-grid"><label>Nombre completo<input name="name" autocomplete="name" required placeholder="Tu nombre"></label><label>Número de contacto<input name="phone" autocomplete="tel" type="tel" required placeholder="Tu teléfono"></label><label>Ciudad o municipio<input name="city" autocomplete="address-level2" required placeholder="Tu ciudad"></label><label>Método de entrega<select name="delivery" id="delivery" required><option value="domicilio">Domicilio</option><option value="recogida en tienda">Recogida en tienda</option></select></label><label class="address-field">Dirección de entrega<input name="address" autocomplete="street-address" placeholder="Calle, número, barrio"></label><label class="full-field">Observaciones <span>(opcional)</span><textarea name="notes" rows="2" placeholder="Indicaciones adicionales…"></textarea></label></div><div id="order-summary" class="order-summary"></div><p id="form-error" class="form-error" role="alert"></p><button class="button button-dark submit-order" type="submit">Abrir pedido en WhatsApp <span>↗</span></button><p class="privacy-note">WhatsApp se abrirá para que revises y envíes el mensaje. El pedido no se envía automáticamente.</p></form></dialog>
+</body>
+</html>
